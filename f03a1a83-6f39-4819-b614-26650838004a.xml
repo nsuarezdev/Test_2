@@ -1,0 +1,20 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>f03a1a83-6f39-4819-b614-26650838004a</id>
+    <loglevel>INFO</loglevel>
+    <name>Orchestrators</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>ls</exec>
+      </command>
+    </sequence>
+    <uuid>f03a1a83-6f39-4819-b614-26650838004a</uuid>
+  </job>
+</joblist>

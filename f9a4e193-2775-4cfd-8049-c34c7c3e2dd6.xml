@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>f9a4e193-2775-4cfd-8049-c34c7c3e2dd6</id>
+    <loglevel>INFO</loglevel>
+    <name>Ruleset Job</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='true' strategy='ruleset'>
+      <command>
+        <exec>systemctl status</exec>
+      </command>
+      <command>
+        <exec>dir</exec>
+      </command>
+      <command>
+        <exec>ifconfig</exec>
+      </command>
+      <pluginConfig>
+        <WorkflowStrategy>
+          <ruleset>
+            <rules>[2] run-after:1</rules>
+          </ruleset>
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <uuid>f9a4e193-2775-4cfd-8049-c34c7c3e2dd6</uuid>
+  </job>
+</joblist>

@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>CloudOps</group>
+    <id>ec4809db-cf91-4eb2-b944-d90bd983c461</id>
+    <loglevel>INFO</loglevel>
+    <name>EC2jobs</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>.*</filter>
+      <filterExclude>localhost.localdomain</filterExclude>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>ls -a</exec>
+      </command>
+    </sequence>
+    <uuid>ec4809db-cf91-4eb2-b944-d90bd983c461</uuid>
+  </job>
+</joblist>

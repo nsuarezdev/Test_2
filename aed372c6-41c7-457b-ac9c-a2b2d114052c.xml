@@ -1,0 +1,54 @@
+<joblist>
+  <job>
+    <defaultTab>output</defaultTab>
+    <description><![CDATA[Generates the md5 checksums (linux and Solaris) for the current package for an installable component version.
+Adds the values into the global context as <code>export.\<os\>_package_md5sum</code>]]></description>
+    <executionEnabled>true</executionEnabled>
+    <group>ZDEV/MMCF</group>
+    <id>aed372c6-41c7-457b-ac9c-a2b2d114052c</id>
+    <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
+    <name>GenPackageChecksums</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='ruleset'>
+      <command>
+        <description>Generating package checksums</description>
+        <script><![CDATA[#!/bin/bash -e
+
+echo "RUNDECK:DATA:package_md5sum=No_Solaris_package_for_ARC2-v2019.11.1:f887df06fcc87f33a6929c6a5c3cf479:"]]></script>
+        <scriptargs />
+      </command>
+      <command>
+        <description>Export checksum</description>
+        <step-plugin type='export-var'>
+          <configuration>
+            <entry key='export' value='package_md5sum' />
+            <entry key='group' value='export' />
+            <entry key='value' value='${data.package_md5sum*}' />
+          </configuration>
+        </step-plugin>
+      </command>
+      <command>
+        <exec>echo ${export.package_md5sum}</exec>
+      </command>
+      <pluginConfig>
+        <LogFilter type='LogFilter:key-value-data'>
+          <config>
+            <logData>true</logData>
+            <name>package_md5sum</name>
+            <regex>^RUNDECK:DATA:(.+?)\s*=\s*(.+)$</regex>
+          </config>
+        </LogFilter>
+        <WorkflowStrategy>
+          <ruleset>
+            <rules>[2,3] run-after:1</rules>
+          </ruleset>
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <uuid>aed372c6-41c7-457b-ac9c-a2b2d114052c</uuid>
+  </job>
+</joblist>

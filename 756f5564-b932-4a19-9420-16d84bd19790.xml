@@ -1,0 +1,42 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>true</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>true</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <group>CloudOps</group>
+    <id>756f5564-b932-4a19-9420-16d84bd19790</id>
+    <loglevel>INFO</loglevel>
+    <name>Azure test</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>.*</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>false</nodesSelectedByDefault>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='sequential'>
+      <command>
+        <step-plugin type='azure-vm-list-step'>
+          <configuration>
+            <entry key='client' value='e8627690-61a2-4061-9594-c50c22071117' />
+            <entry key='key' value='keys/azure' />
+            <entry key='onlyRunningInstances' value='true' />
+            <entry key='subscriptionId' value='ea1ed51d-2f6d-4f60-b3c3-7890d6a9069f' />
+            <entry key='tenant' value='61bf3d17-bf1c-4605-93ba-5f541153b6f1' />
+            <entry key='vmRegion' value='East US' />
+            <entry key='vmResourceGroup' value='Rundeck-sales' />
+          </configuration>
+        </step-plugin>
+      </command>
+    </sequence>
+    <uuid>756f5564-b932-4a19-9420-16d84bd19790</uuid>
+  </job>
+</joblist>

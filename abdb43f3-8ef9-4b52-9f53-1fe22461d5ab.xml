@@ -1,0 +1,29 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option name='Option1' />
+      </options>
+    </context>
+    <defaultTab>nodes</defaultTab>
+    <description>Add an option</description>
+    <executionEnabled>true</executionEnabled>
+    <id>abdb43f3-8ef9-4b52-9f53-1fe22461d5ab</id>
+    <loglevel>INFO</loglevel>
+    <name>Child Job A</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <step-plugin type='log-data-step'>
+          <configuration>
+            <entry key='debugOnly' value='false' />
+          </configuration>
+        </step-plugin>
+      </command>
+    </sequence>
+    <uuid>abdb43f3-8ef9-4b52-9f53-1fe22461d5ab</uuid>
+  </job>
+</joblist>

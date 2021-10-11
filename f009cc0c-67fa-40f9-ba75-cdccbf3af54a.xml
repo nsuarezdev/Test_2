@@ -1,0 +1,31 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description>Advaced Rundeck features</description>
+    <executionEnabled>true</executionEnabled>
+    <id>f009cc0c-67fa-40f9-ba75-cdccbf3af54a</id>
+    <loglevel>INFO</loglevel>
+    <name>Data Passing</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <jobref name='Child Job A' nodeStep='true'>
+          <arg line='-Option1 ${option.Option1} ' />
+          <importOptions>true</importOptions>
+          <uuid>eda6e587-b778-4512-9d8f-500694b0ddde</uuid>
+        </jobref>
+      </command>
+      <command>
+        <jobref name='Child Job B' nodeStep='true'>
+          <arg line='-Option2 ${option.Option2} ' />
+          <importOptions>true</importOptions>
+          <uuid>80ce2ffc-8ae8-4827-9c62-7335a49d8ff5</uuid>
+        </jobref>
+      </command>
+    </sequence>
+    <uuid>f009cc0c-67fa-40f9-ba75-cdccbf3af54a</uuid>
+  </job>
+</joblist>

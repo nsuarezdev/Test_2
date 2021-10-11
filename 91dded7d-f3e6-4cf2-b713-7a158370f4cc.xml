@@ -1,0 +1,148 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>91dded7d-f3e6-4cf2-b713-7a158370f4cc</id>
+    <loglevel>INFO</loglevel>
+    <name>Nixy_jobs_test</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='true' strategy='node-first'>
+      <command>
+        <description>try until</description>
+        <node-step-plugin type='nixy-command-try-until'>
+          <configuration>
+            <entry key='attempts' value='4' />
+            <entry key='command' value='pwd' />
+            <entry key='interval' value='1' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <description>contains</description>
+        <node-step-plugin type='nixy-file-contains'>
+          <configuration>
+            <entry key='file' value='/home/rundeck/Documents/ldap-configs.sh' />
+            <entry key='pattern' value='echo' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <description>dos2unix</description>
+        <node-step-plugin type='nixy-file-dos2unix'>
+          <configuration>
+            <entry key='file' value='/home/rundeck/Documents/ldap-configs.sh' />
+            <entry key='recursive' value='false' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-file-exists'>
+          <configuration>
+            <entry key='file' value='/home/rundeck/Documents/ldap-configs.sh' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-file-not-exists'>
+          <configuration>
+            <entry key='file' value='/home/rundeck/Documents/ldap-configs.sh' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-file-rotate'>
+          <configuration>
+            <entry key='compress' value='true' />
+            <entry key='file' value='/home/rundeck/Documents/ldap-configs.sh' />
+            <entry key='sudo' value='false' />
+            <entry key='tstamp-format' value='+%Y%m%d' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-file-truncate'>
+          <configuration>
+            <entry key='file' value='/root/Documents/setenv.sh' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-local-node-step'>
+          <configuration>
+            <entry key='script' value='#!/bin/bash -e&#10;echo "hola nixy pulgins"&#10;ls -lrt' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-contains'>
+          <configuration>
+            <entry key='file' value='/home/rundeck/Documents/ldap-configs.sh' />
+            <entry key='interval' value='1' />
+            <entry key='maxtry' value='2' />
+            <entry key='pattern' value='echo' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-dir-exists'>
+          <configuration>
+            <entry key='dir' value='/opt/tomcat/' />
+            <entry key='interval' value='2' />
+            <entry key='maxtry' value='2' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-file-exists'>
+          <configuration>
+            <entry key='file' value='/apps/rundeck/server/config/rundeck-config.properties' />
+            <entry key='interval' value='1' />
+            <entry key='maxtry' value='2' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-http'>
+          <configuration>
+            <entry key='interval' value='1' />
+            <entry key='maxtry' value='2' />
+            <entry key='url' value='www.rundeck.com' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-local-ping'>
+          <configuration>
+            <entry key='host' value='localhost' />
+            <entry key='interval' value='1' />
+            <entry key='maxtry' value='2' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-local-port-open'>
+          <configuration>
+            <entry key='host' value='localhost' />
+            <entry key='interval' value='1' />
+            <entry key='maxtry' value='4' />
+            <entry key='port' value='4440' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <node-step-plugin type='nixy-waitfor-sleep-workflow-node-step'>
+          <configuration>
+            <entry key='cycles' value='2' />
+            <entry key='interval' value='2s' />
+            <entry key='progress' value='true' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+    </sequence>
+    <uuid>91dded7d-f3e6-4cf2-b713-7a158370f4cc</uuid>
+  </job>
+</joblist>

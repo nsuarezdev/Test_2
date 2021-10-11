@@ -1,0 +1,30 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>11ed0ae9-06ad-4f67-8aac-28a2a9dbcaaa</id>
+    <loglevel>INFO</loglevel>
+    <name>Global variable</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <schedules />
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>echo ${globals.var1}</exec>
+      </command>
+      <command>
+        <step-plugin type='log-data-step'>
+          <configuration>
+            <entry key='debugOnly' value='false' />
+          </configuration>
+        </step-plugin>
+      </command>
+      <command>
+        <exec>echo "${globals.var1}"</exec>
+      </command>
+    </sequence>
+    <uuid>11ed0ae9-06ad-4f67-8aac-28a2a9dbcaaa</uuid>
+  </job>
+</joblist>
